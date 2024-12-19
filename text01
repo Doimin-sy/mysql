@@ -49,3 +49,11 @@ SELECT * FROM mtest; // 테이블 조회
 SELECT * FROM mtest as m join mtest as t; // 테이블 교차곱 
 DROP TABLE mtest; // 테이블 삭제
 DROP TABLE yytest;  // 테이블 삭제
+CREATE TABLE subject (num int primary key auto_increment,name varchar(10) not null); // null값을 허락하지않음 테이블생성
+
+CREATE TABLE professor (num int auto_increment,name varchar(6) not null,
+age int,subject int,primary key(num), foreign key(subject) references subject(num));
+
+CREATE TABLE student (num int auto_increment, name varchar(6) not null, age int, year int, subject int,
+primary key(num) , foreign key(subject) references subject(num) on delete set null);(casecade) 
+//on delete casecade 지워지면 연달아 연쇄 지워짐
