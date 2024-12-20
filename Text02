@@ -52,3 +52,4 @@ SELECT s.name as stu_name,p.name as pro_name FROM student AS s join professor AS
 SELECT a.name as stu_name,b.name as pro_name FROM student AS a join professor AS b on a.subject=b.subject; //앞 별칭은 보여주는것이고 뒷별칭은 코드를 쭐인거임!!!!!
 //10.학생 테이블과 교수테이블과 과목테이블을 조인하여 학생이름,과목이름, 교수이름을 출력하시오
 SELECT s.name, j.name, p.name FROM student s JOIN professor p JOIN subject j on s.subject=j.num and p.subject=j.num;
+SELECT s.name, j.name, p.name FROM student s JOIN professor p JOIN subject j on s.year >=2 and s.subject=j.num and p.subject=j.num; //조건 추가
